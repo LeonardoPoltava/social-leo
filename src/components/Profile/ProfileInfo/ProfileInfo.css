@@ -6,9 +6,10 @@
     margin-right: 25px;
     object-fit: cover;
 }
-.description {
+.description-holder {
     display: flex;
     align-items: center;
+    padding-bottom: 40px;
 }
 .profile-name {
     display: block;
@@ -22,4 +23,48 @@
 }
 .profile-status-input {
     margin: 10px 0;
+}
+.photo-holder {
+    position: relative;
+}
+.add-photo {
+    display: block;
+    opacity: 0;
+    width: 0;
+    position: absolute;
+}
+.add-photo + label {
+    position: absolute;
+    display: block;
+    background: black;
+    color: #fff;
+    border-radius: 15px;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+    bottom: -45px;
+}
+.add-photo + label:hover {
+    cursor: pointer;
+    background: #fff;
+    color: black;
+}
+.profile-info-list {
+    margin-top: 30px;
+    background: rgba(255,255,255,0.5);
+    padding: 20px;
+}
+.profile-info-list .profile-info-list__elem {
+    margin-top: 20px;
+}
+.profile-info-list .profile-info-list__elem:first-child {
+    margin-top: 0;
+}
+.contacts-list {
+    padding: 5px 25px;
+}
+.contacts-box {
+    padding: 5px 0;
 }
