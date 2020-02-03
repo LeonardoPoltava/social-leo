@@ -1,0 +1,31 @@
+.dialog {
+    padding: 12px;
+    background: brown;
+    border-bottom: 1px solid #000;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+.dialog:not(.active):hover {
+    opacity: 0.5;
+}
+.dialog:last-child {
+    border-bottom: none;
+}
+.dialog.active {
+    background: gold;
+    color: #000;
+}
+.dialog.active a {
+    color: #000;
+}
+.dialog-avatar {
+    width: 70px;
+    object-fit: cover;
+    height: 70px;
+    margin-right: 15px;
+    border-radius: 100%;
+}
+.dialog-name {
+    font-size: 24px;
+}

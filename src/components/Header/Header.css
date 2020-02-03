@@ -1,0 +1,29 @@
+.header {
+    border-bottom: 1px solid #1a1a1a;
+    grid-area: h;
+    background: #1a1a1a;
+}
+.header img {
+    display: block;
+}
+.login-box a {
+    color: #fff;
+}
+.user-name {
+    display: block;
+    color: #fff;
+    font-size: 20px;
+}
+.header-nav > span {
+    margin-right: 10px;
+}
+.logout {
+    font-size: 16px;
+    color: #fff;
+    background: none;
+    text-decoration: underline;
+}
+.logout:hover {
+    text-decoration: none;
+    cursor: pointer;
+}

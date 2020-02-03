@@ -1,0 +1,67 @@
+.dialog-side {
+    margin-right: 15px;
+    width: 70px;
+}
+.find-dialog {
+    display: grid;
+    grid-template-columns: 0fr 5fr 0fr;
+}
+.dialog-follow-btn {
+    display: block;
+    margin: 10px auto 0;
+}
+.dialog-side .dialog-avatar {
+    margin: 0 auto;
+    display: block;
+}
+.user-content {
+    max-width: 560px;
+}
+.user-content,
+.user-locaion {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.user-content *,
+.user-locaion * {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100%;
+    display: block;
+    margin: 15px 0;
+}
+
+.dialog {
+    padding: 12px;
+    background: brown;
+    border-bottom: 1px solid #000;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+.dialog:not(.active):hover {
+    opacity: 0.5;
+}
+.dialog:last-child {
+    border-bottom: none;
+}
+.dialog.active {
+    background: gold;
+    color: #000;
+}
+.dialog.active a {
+    color: #000;
+}
+.dialog-avatar {
+    width: 70px;
+    object-fit: cover;
+    height: 70px;
+    margin-right: 15px;
+    border-radius: 100%;
+}
+.dialog-name {
+    font-size: 24px;
+}

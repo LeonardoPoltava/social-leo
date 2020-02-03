@@ -1,0 +1,232 @@
+.flex {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.flex-center-x {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.flex-end-x {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.flex-end-y {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  align-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.flex-start-y {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.flex-center-y {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  align-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.flex-space-b {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.no-wrap {
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+.center {
+  text-align: center;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+html, body {
+  height: 100%;
+}
+.wrapper {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  background: #fff;
+  margin: 0;
+  color: #000;
+  font-size: 18px;
+  overflow-x: hidden;
+  position: relative;
+}
+.clearfix:before,
+.clearfix:after {
+  clear: both;
+  display: block;
+  content: '';
+}
+a:focus {
+  outline: none;
+}
+a {
+  text-decoration: none;
+  color: #626262;
+  transition: 0.5s all ease;
+}
+a:hover {
+  opacity: 0.75;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  color: transparent !important;
+}
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+  color: transparent !important;
+}
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder{
+  color: transparent !important;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #000 !important;
+}
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+  color: #000 !important;
+}
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder{
+  color: #000 !important;
+}
+input:focus,
+textarea:focus,
+button:focus,
+select:focus {
+  outline: none;
+}
+p {
+  margin: 0 0 15px;
+  line-height: 24px;
+}
+p:last-child {
+  margin: 0;
+}
+p a {
+  text-decoration: underline;
+}
+p a:hover {
+  text-decoration: none;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: none;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  cursor: pointer;
+}
+svg {
+  display: block;
+}
+
+.app-wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+  background: linear-gradient(#fff -25%, green);
+  grid-template-areas: "h h" "n c";
+  min-height: 100vh;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+.content {
+  grid-area: c;
+  padding: 15px;
+  background: linear-gradient(aquamarine, #fff);
+  box-shadow: inset 0 0 26px rgba(0,0,0,0.5);
+}
+.container {
+  padding: 0 15px;
+}
+h1 {
+  border-bottom: 1px solid #000;
+  font-size: 48px;
+  padding: 0 0 20px;
+}

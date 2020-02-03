@@ -1,0 +1,18 @@
+.form-control.error input,
+.form-control.error textarea {
+    border: 1px solid red;
+    background-color: lightcoral;
+}
+textarea {
+    resize: none;
+}
+.error-span {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.form-control.error span {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}

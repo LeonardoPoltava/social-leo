@@ -1,0 +1,25 @@
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    display: block;
+    margin-right: 25px;
+    object-fit: cover;
+}
+.description {
+    display: flex;
+    align-items: center;
+}
+.profile-name {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+}
+.profile-status {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+}
+.profile-status-input {
+    margin: 10px 0;
+}

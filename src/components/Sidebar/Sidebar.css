@@ -1,0 +1,17 @@
+.nav {
+    grid-area: n;
+    background: linear-gradient(gray, #fff);
+    box-shadow: inset 0 0 26px rgba(0,0,0,0.5);
+    padding: 15px;
+}
+.nav-list li {
+    margin: 10px 0;
+    font-size: 21px;
+}
+.nav-list li a {
+    color: #fff;
+    text-decoration: none;
+}
+.nav-list li a.active {
+    color: gold;
+}
