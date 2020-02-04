@@ -2,25 +2,32 @@ import React from "react";
 import {reduxForm} from "redux-form";
 import {customField, Input, Textarea} from "../../common/FormsControls/FormsControls";
 
-export const ProfileDataForm = ({profile, handleSubmit}) => {
+export const ProfileDataForm = ({handleSubmit, profile, error}) => {
     return <form onSubmit={handleSubmit} className="profile-info-list">
-        <li className={"profile-info-list__elem"}>
-            <button type={"submit"}>Save</button>
-        </li>
-        <li className={"profile-info-list__elem"}>
-            <b>Looking for a job</b>: { customField("", "lookingForAJob", [], Input, "", {type: "checkbox"} )}
-        </li>
-        {profile.lookingForAJob && // Если Ищу работу равно тру
-        <li className={"profile-info-list__elem"}>
-            <b>My professional skills</b>: { customField("", "lookingForAJobDescription", [], Textarea )}
-        </li>
+        <div className={"profile-info-list__elem flex"}>
+            <button className={"profile-btn"} type={"submit"}>Save</button>
+        </div>
+        {error && <div className={"summary-error"}>
+            {error}
+        </div>
         }
-        <li className={"profile-info-list__elem"}>
-            <b>About me:</b> { customField("", "aboutMe", [], Input, "")}
-        </li>
-        <li className={"profile-info-list__elem"}>
+        <div className={"profile-info-list__elem flex-center-y"}>
+            <b>Looking for a job:</b> { customField("", "lookingForAJob", [], Input, "", {type: "checkbox"} )}
+        </div>
+        <div className={"profile-info-list__elem flex"}>
+            <b>My professional skills:</b> { customField("My professional skills", "lookingForAJobDescription", [], Textarea )}
+        </div>
+        <div className={"profile-info-list__elem flex"}>
+            <b>About me:</b> { customField("About me", "aboutMe", [], Input, "")}
+        </div>
+        <div className={"profile-info-list__elem flex"}>
             <b>Contacts:</b>
-        </li>
+            {Object.keys(profile.contacts).map(key => {
+            return <div key={key} className={"flex contacts-col"}>
+                <b className={"title-sm"}>{key}:</b> {customField(key, "contacts." + key, [], Input)}
+            </div>
+            })}
+        </div>
     </form>
 };
 const ProfileDataFormReduxForm = reduxForm({form: 'edit-profile'})(ProfileDataForm)

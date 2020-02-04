@@ -48,18 +48,18 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
 const ProfileData = ({profile, isOwner, activateEditMode}) => {
     return <ul className="profile-info-list">
         {isOwner && <li className={"profile-info-list__elem"}>
-            <button onClick={activateEditMode}>Edit</button>
+            <button className={"profile-btn"} onClick={activateEditMode}>Edit</button>
         </li>}
         <li className={"profile-info-list__elem"}>
-            <b>Looking for a job:</b> {profile.lookingForAJob ? "Yes" : "No"};
+            <b>Looking for a job:</b> {profile.lookingForAJob ? "Yes" : "No"}
         </li>
         {profile.lookingForAJob && // Если Ищу работу равно тру
         <li className={"profile-info-list__elem"}>
-            <b>My professional skills:</b> {profile.lookingForAJobDescription};
+            <b>My professional skills:</b> {profile.lookingForAJobDescription}
         </li>
         }
         <li className={"profile-info-list__elem"}>
-            <b>About me:</b> {profile.aboutMe};
+            <b>About me:</b> {profile.aboutMe}
         </li>
         <li className={"profile-info-list__elem"}>
             <b>Contacts:</b>
@@ -73,6 +73,6 @@ const ProfileData = ({profile, isOwner, activateEditMode}) => {
     </ul>
 }
 const Contact = ({contactTitle, contactValue}) => {
-    return <div className={"contacts-box"}><b>{contactTitle}</b>: {contactValue}</div>
+    return <div className={"contacts-box"}><b>{contactTitle}:</b> {contactValue}</div>
 };
 export default ProfileInfo;

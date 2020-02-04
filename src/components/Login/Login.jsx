@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 import {customField, Input} from "../common/FormsControls/FormsControls";
 import {required} from "../../utils/validators/validators";
 
-const LoginForm = ({handleSubmit, error}) => {
+const LoginForm = ({handleSubmit, error, captchaUrl}) => {
     return (
         <form onSubmit={handleSubmit} className="login-form">
             {customField("Login", "email", [required], Input, "login-form__input", {type:"email"})}
@@ -15,6 +15,8 @@ const LoginForm = ({handleSubmit, error}) => {
                 {customField(null, "rememberMe", null, "input", "checkbox", {type:"checkbox", id: "remember"})}
                 <label htmlFor="remember">Remember me</label>
             </div>
+            { captchaUrl && <img alt={""} src={captchaUrl} />}
+            { captchaUrl &&  customField("Symbols from image", "captcha", [required], Input, {}) }
             {error && <div className="summary-error">
                 {error}
             </div>}
@@ -29,14 +31,14 @@ const LoginReduxForm = reduxForm({
 
 const Login = (props) => {
     const onSubmit = (formData) => {
-        props.getLoginUserData(formData.email, formData.password, formData.rememberMe);
+        props.getLoginUserData(formData.email, formData.password, formData.rememberMe, formData.captcha);
     };
     if(props.isAuth) {
         return <Redirect to={"/profile/"} />
     }
     return <div className="login">
         <h1>Login</h1>
-        <LoginReduxForm onSubmit={onSubmit} />
+        <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
     </div>
-}
+};
 export default connect()(Login);
