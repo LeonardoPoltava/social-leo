@@ -1,7 +1,7 @@
 import React, {Component, Suspense, lazy} from 'react';
 import './App.css';
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
-import {BrowserRouter, Redirect, Route, Switch, withRouter} from 'react-router-dom';
+import {HashRouter, Redirect, Route, Switch, withRouter} from 'react-router-dom';
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import store from "./redux/redux-store";
@@ -51,11 +51,11 @@ let AppContainer = compose(
     connect(mapStateToProps, {initializeApp}))(App);
 
 const SamuraiJSApp = (props) => {
-    return <BrowserRouter >
+    return <HashRouter >
         <Provider store={store}>
             <AppContainer />
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 };
 
 export default SamuraiJSApp;
