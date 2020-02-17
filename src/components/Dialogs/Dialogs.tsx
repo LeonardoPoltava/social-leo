@@ -5,19 +5,19 @@ import Message from "./Message/Message";
 import {Field, reduxForm} from 'redux-form'
 import {Textarea} from "../common/FormsControls/FormsControls";
 import {required} from "../../utils/validators/validators";
+import {DialogsElementType, MessagesElementType} from "../../types/types";
 
-const Dialogs = (props) => {
+const Dialogs = (props: any) => {
     let state = props.messagesPage;
     // dialogs
-    let dialogsElement = state.dialogsData
-        .map( d => {
-            return <DialogItem avatar={d.avatar} id={d.id} name={d.name} key={d.id} />
-        });
+    let dialogsElement = state.dialogsData.map( (d: DialogsElementType) => {
+        return <DialogItem avatar={d.avatar} id={d.id} name={d.name} key={d.id} />
+    });
     // messages
-    let messagesElement = state.messagesData.map( m => {
+    let messagesElement = state.messagesData.map( (m: MessagesElementType) => {
         return <Message id={m.id} message={m.message} key={m.id} />
     });
-    const onSubmit = (values) => {
+    const onSubmit = (values: any) => {
         props.addMessage(values.messageArea);
     };
     return (
@@ -35,14 +35,14 @@ const Dialogs = (props) => {
         </div>
     );
 };
-const AddMessageForm = (props) => {
+const AddMessageForm = (props: any) => {
     return (
         <form onSubmit={props.handleSubmit} className="message-form">
             <Field component={Textarea} placeholder={"Text here.."} name="messageArea" id="message-area" cols="30" rows="10" validate={[required]}></Field>
             <button>Add message</button>
         </form>
     )
-}
+};
 const AddMessageReduxForm = reduxForm({
     form: 'dialogAddMessageForm'
 })(AddMessageForm);

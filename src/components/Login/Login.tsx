@@ -5,8 +5,9 @@ import {Redirect} from "react-router-dom";
 import {connect} from "react-redux";
 import {customField, Input} from "../common/FormsControls/FormsControls";
 import {required} from "../../utils/validators/validators";
+import {LoginFormProps} from "../../types/types";
 
-const LoginForm = ({handleSubmit, error, captchaUrl}) => {
+const LoginForm: any = ({handleSubmit, error, captchaUrl}: LoginFormProps) => {
     return (
         <form onSubmit={handleSubmit} className="login-form">
             {customField("Login", "email", [required], Input, "login-form__input", {type:"email"})}
@@ -23,14 +24,14 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
             <button className="form-btn">Login</button>
         </form>
     )
-}
+};
 
-const LoginReduxForm = reduxForm({
-    form: 'login'
+const LoginReduxForm: any = reduxForm({
+    form: 'login',
 })(LoginForm);
 
-const Login = (props) => {
-    const onSubmit = (formData) => {
+const Login = (props: any) => {
+    const onSubmit = (formData: any) => {
         props.getLoginUserData(formData.email, formData.password, formData.rememberMe, formData.captcha);
     };
     if(props.isAuth) {

@@ -4,14 +4,14 @@ import {connect} from "react-redux";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
     return {
         messagesPage: state.messagesPage
     }
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
     return {
-        addMessage: (newMessageText) => {dispatch(addMessageCreator(newMessageText))}
+        addMessage: (newMessageText: string) => {dispatch(addMessageCreator(newMessageText))}
     }
 };
 
